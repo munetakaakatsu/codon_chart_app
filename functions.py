@@ -36,7 +36,7 @@ class Codon(object):
         self.sequence = input("塩基配列を入力してください: ").upper()
         return self.sequence
 
-    # もしATGC以外の数値が含まれている場合はエラーを返す
+    # もしAUGC以外の数値が含まれている場合はエラーを返す
     def validate_sequence(self):
         for base in self.sequence:
             if base not in self.valid_bases:
