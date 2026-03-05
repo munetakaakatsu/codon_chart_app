@@ -32,12 +32,12 @@ class Codon(object):
         self.codon_table = codon_table
 
     # ユーザーからのインプットを受け付ける
-    def input_sequence(self):
+    def sequence_input(self):
         self.sequence = input("塩基配列を入力してください: ").upper()
         return self.sequence
 
     # もしAUGC以外の数値が含まれている場合はエラーを返す
-    def validate_sequence(self):
+    def sequence_validation(self):
         for base in self.sequence:
             if base not in self.valid_bases:
                 print("エラー: 塩基配列にはA, U, G, C以外の文字が含まれています。")
@@ -47,7 +47,7 @@ class Codon(object):
         return True
 
     # インプットの文字数を3で割る。この後、割った時の余りによって条件分岐をする。
-    def process_sequence(self):
+    def sequence_remainder(self):
         if not self.valid_check:
             print("エラー: 塩基配列にはA, U, G, C以外の文字が含まれています。")
             return
@@ -58,7 +58,7 @@ class Codon(object):
     # 余りが0の場合: 文字列を3文字づつに区切る
     # 余りが1の場合: 最後の1文字を切り捨てて文字列を3文字づつに区切る
     # 余りが2の場合: 最後の2文字を切り捨てて文字列を3文字づつに区切る
-    def translate_sequence(self):
+    def sequence_chopper(self):
         if self.remainder == 0:
             self.codons = [self.sequence[i:i+3] for i in range(0, len(self.sequence), 3)]
         elif self.remainder == 1:
@@ -69,7 +69,7 @@ class Codon(object):
 
 
     # コドン表を参照してアミノ酸を返す
-    def get_amino_acids(self):
+    def sequence_translator(self):
         self.amino_acids = []
         stop_codons = ["UAA", "UAG", "UGA"]
         start_found = False
