@@ -42,9 +42,8 @@ class Codon(object):
             if base not in self.valid_bases:
                 print("エラー: 塩基配列にはA, U, G, C以外の文字が含まれています。")
                 self.valid_check = False
-                return False
+                break
         self.valid_check = True
-        return True
 
     # インプットの文字数を3で割る。この後、割った時の余りによって条件分岐をする。
     def sequence_remainder(self):
