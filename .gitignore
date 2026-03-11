@@ -66,4 +66,43 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+
+# Node modules
+node_modules/
+
+# build output
+dist/
+build/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+
+# editor
+.vscode/
+.idea/
+
+# docker
+docker-compose.override.yml
+
+# test output
+coverage/
+
+# cache
+.cache/
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
 # End of https://www.toptal.com/developers/gitignore/api/windows
